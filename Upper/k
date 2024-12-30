@@ -1,0 +1,4 @@
+[A-Za-z]       { convert(yytext[0]); ch++; }                 
+[ \t]          { sc++; printf("%c", yytext[0]); }                        
+\n             { lc++; printf("\n"); }                                
+[A-Za-z0-9]+   { wc++; ch += yyleng; for (int i = 0; i < yyleng; i++) convert(yytext[i]); }  
